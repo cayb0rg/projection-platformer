@@ -9,6 +9,7 @@ public class SwitchLevel : MonoBehaviour
     public CinemachineVirtualCamera[] cameras;
     public int transitionTime = 0;
     public GameObject player;
+    public GameObject door;
 
     // Update is called once per frame
     void Update()
@@ -29,6 +30,9 @@ public class SwitchLevel : MonoBehaviour
                 cam.enabled = false;
             }
         }
+
+        // Move player
+        player.transform.position = door.transform.position + new Vector3(2, 0, 0);
     }
 
     public void switchToLevel(int level)
@@ -37,7 +41,7 @@ public class SwitchLevel : MonoBehaviour
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Door")
+        if (collision.gameObject.tag == "Player")
         {
             switchToLevel(1);
         }

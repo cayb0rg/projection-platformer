@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody2D rigidbody2d;
+    public Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
-    
     public float jumpForce = 0.1f;
+    public bool isJumping = false;
     
     
     // Start is called before the first frame update
@@ -28,10 +28,16 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(horizontal);
         Vector2 position = transform.position;
         position.x = position.x + 0.1f * horizontal;
-        position.y = position.y + jumpForce * vertical;
-        transform.position = position;
+
+        if (vertical > 0 && !isJumping) {
+            GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
+            isJumping = true;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision collision) {
+        isJumping = false;
     }
 }
