@@ -698,7 +698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976384544192858335, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
       propertyPath: m_BodyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5838562735870841706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
       propertyPath: sr
@@ -708,6 +708,22 @@ PrefabInstance:
       propertyPath: thisAnim
       value: 
       objectReference: {fileID: 1658130299}
+    - target: {fileID: 5838562735870841706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
+      propertyPath: waitTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838562735870841706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
+      propertyPath: isJumping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838562735870841706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5838562735870841706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
+      propertyPath: jumpableGround.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5847489169258779995, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
       propertyPath: m_Name
       value: workedonplayer
@@ -726,7 +742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8002085688105850706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.92
+      value: -1.64
       objectReference: {fileID: 0}
     - target: {fileID: 8002085688105850706, guid: e8aa211cbbd8b64438828c088ea90056, type: 3}
       propertyPath: m_LocalPosition.z
@@ -887,9 +903,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 519483500497063367, guid: 8730a35bb12307042b5d2e83c949b1e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1528082664196933670, guid: 8730a35bb12307042b5d2e83c949b1e3, type: 3}
       propertyPath: m_Name
       value: Grid
+      objectReference: {fileID: 0}
+    - target: {fileID: 1528082664196933670, guid: 8730a35bb12307042b5d2e83c949b1e3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1545161276844575538, guid: 8730a35bb12307042b5d2e83c949b1e3, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
