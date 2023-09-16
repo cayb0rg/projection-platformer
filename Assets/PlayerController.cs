@@ -7,6 +7,10 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
+    
+    public float jumpForce = 0.1f;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(horizontal);
         Vector2 position = transform.position;
         position.x = position.x + 0.1f * horizontal;
+        position.y = position.y + jumpForce * vertical;
         transform.position = position;
     }
 }
