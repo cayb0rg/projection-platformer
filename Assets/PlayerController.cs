@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidbody2d;
     float horizontal;
     float vertical;
+    float jump;
     public float jumpForce = 0.1f;
     public bool isJumping = false;
     
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        jump = Input.GetAxis("Jump");
     }
 
     void FixedUpdate()
@@ -31,13 +33,13 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         position.x = position.x + 0.1f * horizontal;
 
-        if (vertical > 0 && !isJumping) {
+        if (jump > 0 && !isJumping) {
             GetComponent<Rigidbody2D>().AddForce(Vector3.up * jumpForce, ForceMode2D.Impulse);
             isJumping = true;
         }
     }
 
-    void OnCollisionEnter2D(Collision collision) {
+    void OnCollisionEnter2D(Collision2D collision) {
         isJumping = false;
     }
 }
