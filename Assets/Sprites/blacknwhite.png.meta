@@ -786,6 +786,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: blacknwhite_31
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 28
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5143e9775049e8f80ad2524825d868a4
+      internalID: -697654650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -822,6 +843,7 @@ TextureImporter:
       blacknwhite_29: -944997609
       blacknwhite_3: -261280441
       blacknwhite_30: 681687046
+      blacknwhite_31: -697654650
       blacknwhite_4: 109410806
       blacknwhite_5: -555309507
       blacknwhite_6: 1717090730
