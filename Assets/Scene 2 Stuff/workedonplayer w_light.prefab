@@ -157,6 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be297579ab9ba41b6bd670795adde315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisAnim: {fileID: 0}
+  sr: {fileID: 0}
+  isJumping: 0
   jumpForce: 0.5
 --- !u!61 &9001376279354396892
 BoxCollider2D:
