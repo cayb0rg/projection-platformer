@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Bits: 8
   jumpForce: 7
   moveSpeed: 2
-  waitTime: 0
+  waitTime: 1
 --- !u!61 &8936818415439071574
 BoxCollider2D:
   m_ObjectHideFlags: 0
