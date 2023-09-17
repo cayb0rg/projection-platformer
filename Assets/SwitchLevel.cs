@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+using Cinemachine; 
 
 // Transitions the camera between two different cameras
 public class SwitchLevel : MonoBehaviour
@@ -10,10 +10,18 @@ public class SwitchLevel : MonoBehaviour
     public int transitionTime = 0;
     public GameObject player;
     public GameObject door;
+    public GameObject textObject; 
+    public Key key;
+    bool canFlip = false;
+    public GameObject image;
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F) && canFlip) {
+            switchToLevel(1);
+            canFlip = false;
+        }
     }
 
     IEnumerator transition(CinemachineVirtualCamera camera)
@@ -31,8 +39,16 @@ public class SwitchLevel : MonoBehaviour
             }
         }
 
+        // Show background
+        if (image != null) {
+            image.SetActive(true);
+        }
+
         // Move player
-        player.transform.position = door.transform.position + new Vector3(2, 0, 0);
+        player.transform.position = door.transform.position;
+
+        // Disable text object
+        textObject.SetActive(false);
     }
 
     public void switchToLevel(int level)
@@ -40,10 +56,20 @@ public class SwitchLevel : MonoBehaviour
         StartCoroutine(transition(cameras[level]));
     }
 
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Player")
-        {
-            switchToLevel(1);
+    void OnTriggerEnter2D(Collider2D collision) {
+        if (key.hasKey) {
+            // Show text
+            textObject.SetActive(true);
+            canFlip = true;
         }
+        // if (collision.gameObject.tag == "Player")
+        // {
+        //     switchToLevel(1);
+        // }
+    }
+
+    void OnTriggerExit2D(Collider2D collision) {
+        textObject.SetActive(false);
+        canFlip = false;
     }
 }

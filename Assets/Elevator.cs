@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class Elevator : MonoBehaviour
 {
     public GameObject player;
+    public GameObject top;
     // public Rigidbody2D rb2D;
     public Vector2 velocity;
     public PlayableDirector directorUp;
@@ -26,12 +27,15 @@ public class Elevator : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collider) {
         if (collider.gameObject.tag == "Player") {
+            // player.GetComponent<SpriteRenderer>().enabled = false;
+            player.transform.position = top.transform.position;
+            player.SetActive(false);
             directorUp.Play();
         }
     }
-    void OnCollisionExit2D(Collision2D collider) {
-        if (collider.gameObject.tag == "Player") {
-            directorDown.Play();
-        }
-    }
+    // void OnCollisionExit2D(Collision2D collider) {
+    //     if (collider.gameObject.tag == "Player") {
+    //         directorDown.Play();
+    //     }
+    // }
 }

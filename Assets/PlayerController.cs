@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         position.x = position.x + 0.1f * horizontal;
         transform.position = position;
-        if (IsGrounded() && vertical > 0.1f && timePassed > waitTime) {
+        if (IsGrounded() && Input.GetButtonDown("Jump") && timePassed > waitTime) {
             // position.y = position.y + jumpForce * vertical;
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             timePassed = 0f;
