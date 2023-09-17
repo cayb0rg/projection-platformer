@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Light Box
   layers:
   - Default
   - TransparentFX
