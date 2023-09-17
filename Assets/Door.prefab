@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameras: []
   transitionTime: 0
+  player: {fileID: 0}
+  door: {fileID: 0}
